@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=form, initial-scale=1.0">
+    <title>Quasar</title>
+    <style>
+        body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  
+        #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+        #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+        #input:focus { outline: none; }
+        #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+  
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages > li { padding: 0.5rem 1rem; }
+        #messages > li:nth-child(odd) { background: #efefef; }
+      
+         .bg-custom {
+           color: #931C1C;
+           }
+        footer{
+           color:#3b82f6;
+            }
+      </style>
+       <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body>
+   <div class="" id="formDisplay"  class="" style="display: block;">
+    <div id="container" class="font-serif bg-orange-600 background h-[100vh]">
+        <header class="bg-slate-200 rounded-md mb-4">
+          <nav>
+            <ul class="flex h-[10vh] justify-end items-center pr-32 ">
+              <img src="/img/logo.png" alt="logo of the website" class="h-12 absolute left-12">
+              <li class="text-2xl bg-custom rounded-2xl w-35 h-8 absolute left-[5.5rem]" id="logo">Quasar</li>
+              <li class="px-12">Home</li>
+              <li class="px-12">About</li>
+              <li class="px-12">Contact Us</li>
+              <button class="bg-custom rounded-2xl w-20 h-8 text-center">LOGIN</button>
+            </ul>
+          </nav>
+        </header>
+        <main class="h-[75vh] bg-slate-200 rounded-md ">
+          <h1 class="text-5xl mb-4 pt-4 ml-4">Chat with your friends using Quasar</h1>
+          <h3 class="text-2xl mb-4 pt-4 ml-4 ">Join and chat to whoever you want with lighting speed.
+             <br> Create custom rooms to enjoy privacy like never seen before
+          </h3>
+          <form   method="post" id="nameForm" class=" h-[35vh]  ml-8 pt-14 " >
+            <fieldset>
+              <input required class="m-2"  type="text" placeholder="Enter your name" name="name" id="inputName">
+              <br>
+              <input required class="m-2" type="text" placeholder="Enter your room ID"  id="room">
+              <br>
+              <button type="submit" id="sendNameButton" class="bg-white hover:bg-gray-100 text-green-500 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                Proceed
+              </button>
+            </fieldset>
+          </form>
+        </main>
+        <footer class="mt-1 h-[12vh]">
+          <a class="underline" href="https://www.flaticon.com/free-icons/mobile-application" title="mobile application icons">Mobile application icons created by iconmas - Flaticon</a>    
+          <br>
+          <a href="" class="underline">Photo by Seven 7: https://www.pexels.com/photo/photo-of-two-men-talking-while-sitting-on-chair-2420585/</a>
+        </footer>
+   </div>
+   </div>
+   <div class="" id="chatDisplay" class="" style="display: none;">
+        <ul id="messages"></ul>
+        <form id="form" action="">
+          <input id="input" autocomplete="off" /><button>Send</button>
+        </form>
+   </div>
+   <script src="/socket.io/socket.io.js"></script>
+   <script src="/script.js"></script>
+</body>
+</html>
